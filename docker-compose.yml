@@ -1,0 +1,21 @@
+version: '2'
+services:
+  node:
+    build: node/.
+    ports:
+      - "80:80"
+    volumes:
+     - ./node:/node
+    links:
+      - redis-general
+  redis-general:
+    build: redis
+    volumes:
+      - ./redis:/data
+    expose:
+      - '6379'
+
+networks:
+  default:
+    external:
+      name: webserver_default
