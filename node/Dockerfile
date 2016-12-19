@@ -19,4 +19,4 @@ RUN npm install --global express
 
 WORKDIR /node
 
-CMD ["nodemon", "app.js"]
+CMD ["nodemon", "server.js"]
