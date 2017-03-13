@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 services:
   node:
     build: node/.
@@ -6,16 +6,3 @@ services:
       - "80:80"
     volumes:
      - ./node:/node
-    links:
-      - redis-general
-  redis-general:
-    build: redis
-    volumes:
-      - ./redis:/data
-    expose:
-      - '6379'
-
-networks:
-  default:
-    external:
-      name: webserver_default
