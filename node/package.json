@@ -13,9 +13,18 @@
   "author": "Michael Hart <michael.hart.au@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "uuid": "^3.0.1",
+    "body-parser": "^1.17.1",
+    "ioredis": "^2.5.0",
     "browserify": "^13.1.0",
+    "emailjs": "^1.0.8",
     "literalify": "^0.4.0",
+    "passwordless": "^1.1.2",
+    "passwordless-redisstore": "^1.0.2",
     "react": "^15.3.0",
-    "react-dom": "^15.3.0"
+    "react-dom": "^15.3.0",
+    "aws-sdk": "^2.28.0",
+    "express": "^4.15.2",
+    "cookie-session": "^2.0.0-beta.1"
   }
 }

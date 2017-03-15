@@ -5,4 +5,7 @@ services:
     ports:
       - "80:80"
     volumes:
-     - ./node:/node
+     - ./node:/usr/src/app
+    command: ['nodemon', 'server.js']
+  redis:
+    image: redis
