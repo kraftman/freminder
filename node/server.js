@@ -43,6 +43,10 @@ passwordless.init(new redisStore(6379,'redis'),{skipForceSessionSave:true});
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
+app.use(express.static('public'));
+app.set('view engine', 'pug');
+
+
 
 
 app.use(passwordless.acceptToken({ successRedirect: '/success'}));
@@ -86,11 +90,12 @@ app.listen(80, function () {
 });
 
 app.get('/', function(req,res){
-  if (req.user){
-    res.send('you are logged in, ID:  '+req.user);
-  } else {
-    res.send('you are not logged in');
-  }
+  res.render('index', { title: 'Hey', message: 'Hello there!', req: req })
+  // if (req.user){
+  //   res.send('you are logged in, ID:  '+req.user);
+  // } else {
+  //   res.send('you are not logged in');
+  // }
 });
 
 app.get('/success', function(req,res){

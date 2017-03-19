@@ -1,0 +1,12 @@
+extends _bootstrap
+block body
+  .navbar.navbar-default
+    .container-fluid
+      .navbar-header
+        a.navbar-brand(href="#") test
+      #collapse1.collapse.navbar-collapse
+        ul.nav.navbar-nav
+          li.active: a(href='/test') test1
+        ul.nav.navbar-nav.navbar-right
+          +input-group("$","%")
+            +input-simple("text","txtName","Name","Name")
