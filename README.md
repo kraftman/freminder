@@ -1,7 +1,11 @@
 
+# Freminder
+
+## Reminder app for friends, tasks, etc
+
 Aims:  
 
-- Run app using node with await/async features
+- Test new node await/async features
 - Play with AWS
   - Route53 for passwordless logins
     - create user if they dont exist

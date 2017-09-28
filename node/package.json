@@ -14,6 +14,7 @@
   "license": "MIT",
   "dependencies": {
     "pug-bootstrap": "0.0.11",
+    
     "pug": "2.0.0-beta11",
     "uuid": "^3.0.1",
     "body-parser": "^1.17.1",
