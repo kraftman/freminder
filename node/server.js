@@ -2,8 +2,6 @@
 /*jshint esversion: 6 */
 
 
-console.log('started!');
-
 var AWS = require('aws-sdk');
 var email = require('emailjs')
 
@@ -13,6 +11,7 @@ var myBucket = 'testiesddd';
 var myKey = 'test';
 
 var express = require('express');
+var helmet = require ('helmet');
 var passwordless = require('passwordless');
 var redisStore = require('passwordless-redisstore');
 var cookieSession = require('cookie-session');
@@ -26,7 +25,7 @@ var red = new Redis('redis');
 
 var app = express();
 
-
+app.use(helmet());
 app.use(cookieSession({
   name: 'session',
   keys: ['mysecretkey'],

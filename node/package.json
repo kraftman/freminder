@@ -1,33 +1,33 @@
 {
-  "name": "react-server-example",
-  "version": "1.2.5",
-  "description": "A very simple implementation of server-side React rendering",
+  "name": "Freminder",
+  "version": "0.0.1",
+  "description": "Simple reminder application to test new technologies",
   "main": "server.js",
-  "repository": "mhart/react-server-example",
+  "repository": "kraftman/freminder",
   "keywords": [
     "react",
     "reactjs",
     "server",
     "server-side"
   ],
-  "author": "Michael Hart <michael.hart.au@gmail.com>",
+  "author": "Chris Tanner<me@itschr.is>",
   "license": "MIT",
   "dependencies": {
-    "pug-bootstrap": "0.0.11",
-    
-    "pug": "2.0.0-beta11",
-    "uuid": "^3.0.1",
+    "aws-sdk": "^2.28.0",
     "body-parser": "^1.17.1",
-    "ioredis": "^2.5.0",
     "browserify": "^13.1.0",
+    "cookie-session": "^2.0.0-beta.1",
     "emailjs": "^1.0.8",
+    "express": "^4.15.2",
+    "helmet": "3.8.2",
+    "ioredis": "^2.5.0",
     "literalify": "^0.4.0",
     "passwordless": "^1.1.2",
     "passwordless-redisstore": "^1.0.2",
+    "pug": "2.0.0-beta11",
+    "pug-bootstrap": "0.0.11",
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
-    "aws-sdk": "^2.28.0",
-    "express": "^4.15.2",
-    "cookie-session": "^2.0.0-beta.1"
+    "uuid": "^3.0.1"
   }
 }
