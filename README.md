@@ -1,16 +1,18 @@
 
 # Freminder
 
-## Reminder app for friends, tasks, etc
+Reminder app for friends, tasks, etc. Playground for testing new technologies
 
-Aims:  
-
-- Test new node await/async features
+### Toys to try out:  
+- ~~passwordless~~
+- ~~Bacblaze B2~~
+- ~~new aysnc/await~~
+- graphQL
+- React
+- Elm?
 - Play with AWS
   - Route53 for passwordless logins
     - create user if they dont exist
   - RDS for postgres backend
-  - Elasticache (not sure where?)
   - S3 for static images etc.
   - route s3 through cloudfront
-- Render with React
