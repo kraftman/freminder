@@ -32,6 +32,7 @@ FROM kraftman/docker-node-onbuild
 #ADD . /usr/src
 RUN npm install -g webpack webpack-dev-server
 
+
 RUN npm install -g nodemon
 
 

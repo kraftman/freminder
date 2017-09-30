@@ -1,39 +1,15 @@
-import path from 'path'
-import Express from 'express'
-import React from 'react'
-import { createStore } from 'redux'
-import { Provider } from 'react-redux'
-import counterApp from './reducers'
-import App from './containers/App'
 
-const app = Express()
-
-const port = 80
 
 var AWS = require('aws-sdk');
-var email = require('emailjs')
 
-var s3 = new AWS.S3();
-var myBucket = 'testiesddd';
-var myKey = 'test';
-
-var express = require('express');
 var helmet = require ('helmet');
-var redisStore = require('passwordless-redisstore');
-const uuidV4 = require('uuid/v4');
-
 var bodyParser = require('body-parser');
-
-var Redis = require('ioredis');
-var red = new Redis('redis');
 var home = require('./controllers/home');
+var express = require('express');
 
+var app = module.exports = express();
 
-var app = express();
-module.exports = app;
-
-
-var auth = require('auth');
+var auth = require('./auth');
 
 app.use(helmet());
 
@@ -41,16 +17,32 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(express.static('public'));
 app.set('view engine', 'pug');
+console.log('this')
+app.use('/static', express.static('static'));
 
 app.get('/', home);
 
-app.listen(80, function () {
-  console.log('Example app listening on port 80!');
-});
+app.listen(80);
 
 
+
+// import path from 'path'
+// import Express from 'express'
+// // import React from 'react'
+// // import { createStore } from 'redux'
+// // import { Provider } from 'react-redux'
+// import counterApp from './reducers'
+// import App from './containers/App'
+
+
+// var s3 = new AWS.S3();
+// var myBucket = 'testiesddd';
+// var myKey = 'test';
+//var redisStore = require('passwordless-redisstore');
+//const uuidV4 = require('uuid/v4');
+//var Redis = require('ioredis');
+//var red = new Redis('redis');
 //Serve static files
-app.use('/static', Express.static('static'));
 
 // This is fired every time the server side receives a request
 //app.use(handleRender)

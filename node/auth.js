@@ -2,12 +2,26 @@
 var passwordless = require('passwordless');
 
 var cookieSession = require('cookie-session');
+var redisStore = require('passwordless-redisstore');
 
-var app = require
+var email = require('emailjs')
+
+var app = require('./server');
+
+
+app.use(cookieSession({
+  name: 'session',
+  keys: ['mysecretkey'],
+
+  // Cookie Options
+  maxAge: 24 * 60 * 60 * 1000 // 24 hours
+}))
 
 app.use(passwordless.sessionSupport());
 passwordless.init(new redisStore(6379,'redis'),{skipForceSessionSave:true});
 app.use(passwordless.acceptToken({ successRedirect: '/success'}));
+
+
 
 passwordless.addDelivery(
     function(tokenToSend, uidToSend, recipient, callback) {
@@ -66,13 +80,6 @@ var users = [
     { id: 2, email: 'alice@example.com' }
 ];
 
-app.use(cookieSession({
-  name: 'session',
-  keys: ['mysecretkey'],
-
-  // Cookie Options
-  maxAge: 24 * 60 * 60 * 1000 // 24 hours
-}))
 
 
 

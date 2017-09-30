@@ -2,6 +2,8 @@
 var app = require('express')
 var router = app.Router();
 
+var passwordless = require('passwordless');
+
 router.get('/', function(req,res){
   res.render('index', { title: 'Hey', message: 'Hello there!', req: req })
   // if (req.user){
@@ -13,7 +15,7 @@ router.get('/', function(req,res){
 
 
 
-admin.get('/admin', passwordless.restricted(),
+router.get('/admin', passwordless.restricted(),
     function(req, res) {
         res.send(req.user );
 });

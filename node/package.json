@@ -14,6 +14,8 @@
   "license": "MIT",
   "dependencies": {
     "aws-sdk": "^2.28.0",
+    "backblaze-b2": "^1.0.2",
+    "bcrypt": "^1.0.3",
     "body-parser": "^1.17.1",
     "browserify": "^13.1.0",
     "cookie-session": "^2.0.0-beta.1",
@@ -28,9 +30,8 @@
     "pug-bootstrap": "0.0.11",
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
+    "react-redux": "5.0.3",
     "uuid": "^3.0.1",
-  	"webpack": "^2.3.3",
-  	"react-redux": "5.0.3",
-  	"backblaze-b2": "^1.0.2"
+    "webpack": "^2.3.3"
   }
 }
