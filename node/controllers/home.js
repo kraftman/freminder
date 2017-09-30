@@ -4,21 +4,21 @@ var router = app.Router();
 
 var passwordless = require('passwordless');
 
+var AWS = require('aws-sdk');
+var s3 = new AWS.S3();
+var myBucket = 'testiesddd';
+var myKey = 'test';
+
 router.get('/', function(req,res){
   console.log(req.session.passwordless)
   res.locals.uid = req.session.passwordless || null
   res.render('index', { title: 'Hey', message: 'Hello there!', req: req })
-  // if (req.user){
-  //   res.send('you are logged in, ID:  '+req.user);
-  // } else {
-  //   res.send('you are not logged in');
-  // }
+
 });
 
-router.get('/test',function(req,res){
-  res.send('testies');
-});
-
+// router.get('/test',function(req,res){
+//   res.send('testies');
+// });
 
 
 router.get('/admin', passwordless.restricted(),

@@ -1,6 +1,5 @@
 
 
-var AWS = require('aws-sdk');
 
 var helmet = require ('helmet');
 var bodyParser = require('body-parser');
@@ -25,8 +24,16 @@ app.use('/static', express.static('static'));
 app.use('/', home);
 
 
-
 app.listen(80);
+
+
+
+
+
+
+
+
+
 
 
 
@@ -39,9 +46,6 @@ app.listen(80);
 // import App from './containers/App'
 
 
-// var s3 = new AWS.S3();
-// var myBucket = 'testiesddd';
-// var myKey = 'test';
 //var redisStore = require('passwordless-redisstore');
 //const uuidV4 = require('uuid/v4');
 //var Redis = require('ioredis');
