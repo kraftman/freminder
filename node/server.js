@@ -9,18 +9,22 @@ var express = require('express');
 
 var app = module.exports = express();
 
-var auth = require('./auth');
 
 app.use(helmet());
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('public'));
 app.set('view engine', 'pug');
-console.log('this')
+
+
+var auth = require('./auth');
+
 app.use('/static', express.static('static'));
 
-app.get('/', home);
+app.use('/', home);
+
+
 
 app.listen(80);
 
