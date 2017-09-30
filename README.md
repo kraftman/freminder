@@ -11,7 +11,7 @@ Reminder app for friends, tasks, etc. Playground for testing new technologies
 - ~~pug/jade~~
 - ~~webpack~~
 - ~~yarn~~
-- blackbox
+- ~~blackbox~~
 - graphQL
 - React
 - Elm?

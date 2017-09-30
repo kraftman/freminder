@@ -1,4 +1,5 @@
-docker-compose-env.yml
+node-dev.yml
 /keyrings/live/pubring.gpg~
 /keyrings/live/pubring.kbx~
 /keyrings/live/secring.gpg
+/node-dev.env
