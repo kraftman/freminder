@@ -2,10 +2,7 @@ version: '2'
 services:
   node:
     build: node/.
-    ports:
-      - "80:80"
     volumes:
      - ./node:/usr/src/app
-    command: ['nodemon', 'server.js']
   redis:
     image: redis

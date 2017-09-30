@@ -1,0 +1,5 @@
+{
+  "exec": "webpack && echo 'this'",
+  "delay": "250ms",
+  "ignore": "./public/build"
+}
