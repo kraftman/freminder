@@ -1,0 +1,8 @@
+version: '2'
+services:
+  node:
+    ports:
+      - "80:80"
+    command: ['nodemon', 'server.js']
+    env_file:
+      - node-dev.env
