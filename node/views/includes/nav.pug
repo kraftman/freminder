@@ -1,0 +1,16 @@
+
+.navbar.navbar-default
+  .container-fluid
+    .navbar-header
+      a.navbar-brand(href="/") test
+      ul.nav.navbar-nav
+        li.active: a(href='/create') Create
+    #collapse1.collapse.navbar-collapse
+      if uid
+        ul.nav.navbar-nav.navbar-right
+          li.active: a(href='/logout') logout
+      else
+        form(method='POST' action = '/sendtoken')
+          ul.nav.navbar-nav.navbar-right.navbar-form
+            .input-group()
+              +input-simple("text","txtName",{name: 'user',placeholder: 'email'})

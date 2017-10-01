@@ -13,13 +13,16 @@ app.use(helmet());
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(express.static('public'));
+app.use('/public/', express.static('public'));
 app.set('view engine', 'pug');
 
 
 var auth = require('./auth');
 
-app.use('/static', express.static('static'));
+app.use(function(req, res, next) {
+  res.locals.uid = req.session.passwordless || null;
+  next();
+})
 
 app.use('/', home);
 

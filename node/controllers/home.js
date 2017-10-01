@@ -16,15 +16,24 @@ router.get('/', function(req,res){
 
 });
 
-// router.get('/test',function(req,res){
-//   res.send('testies');
-// });
-
-
-router.get('/admin', passwordless.restricted(),
-    function(req, res) {
-        res.send(req.user );
+router.get('/', function(req,res){
+  res.render('index', { title: 'Hey', message: 'Hello there!', req: req })
 });
+
+router.get('/create',
+  passwordless.restricted(),
+  function(req,res){
+    res.render('create', { title: 'Create person', req: req })
+  }
+);
+
+
+router.get('/admin',
+  passwordless.restricted(),
+  function(req, res) {
+    res.send(req.user );
+  }
+);
 
 router.get('/test.html', function (req, res) {
   s3.getObject({Bucket: 'tannertest', Key: 'test.txt' }, function(err,data){

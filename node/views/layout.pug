@@ -1,0 +1,10 @@
+extends _bootstrap
+
+append styles
+  link(rel="stylesheet",href="/public/css/main.min.css")
+  
+block body
+  include includes/nav.pug
+
+  .content
+    block content
