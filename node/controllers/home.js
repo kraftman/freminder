@@ -9,16 +9,17 @@ var s3 = new AWS.S3();
 var myBucket = 'testiesddd';
 var myKey = 'test';
 
-router.get('/', function(req,res){
-  console.log(req.session.passwordless)
-  res.locals.uid = req.session.passwordless || null
-  res.render('index', { title: 'Hey', message: 'Hello there!', req: req })
+// router.get('/', function(req,res){
+//   console.log(req.session.passwordless)
+//   res.locals.uid = req.session.passwordless || null
+//   //res.render('index', { title: 'Hey', message: 'Hello there!', req: req })
+//   res.sendFile(__dirname + '/public/index.html')
+//
+// });
 
-});
-
-router.get('/', function(req,res){
-  res.render('index', { title: 'Hey', message: 'Hello there!', req: req })
-});
+// router.get('/', function(req,res){
+//   res.render('index', { title: 'Hey', message: 'Hello there!', req: req })
+// });
 
 router.get('/create',
   passwordless.restricted(),

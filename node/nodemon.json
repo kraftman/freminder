@@ -1,5 +1,5 @@
 {
-  
+  "exec": "webpack --config webpack.client.config.js && node server.js",
   "delay": "250ms",
   "ignore": "./public/build"
 }

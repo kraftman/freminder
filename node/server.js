@@ -6,6 +6,7 @@ var bodyParser = require('body-parser');
 var home = require('./controllers/home');
 var express = require('express');
 
+
 var app = module.exports = express();
 
 
@@ -25,6 +26,10 @@ app.use(function(req, res, next) {
 })
 
 app.use('/', home);
+
+app.get('/', function(req,res){
+  res.sendFile(__dirname + '/public/index.html')
+});
 
 
 app.listen(80);

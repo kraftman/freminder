@@ -1,7 +1,7 @@
 extends layout
+  
+append scripts
+  script(src="/public/js/test.js",type="text/babel")
+  
 block content
-  +panel-default("New person:")
-    form(method='POST')
-      +input-simple("text",{name: 'firstname',placeholder: 'First name'})
-      +input-simple("text",{name: 'lastname',placeholder: 'Last name'})
-      +submit()
+  
